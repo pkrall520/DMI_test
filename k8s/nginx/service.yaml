@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx # Name of the service
+spec:
+  type: LoadBalancer # Expose the service publically 
+  selector:
+    app: nginx # Find your pod by name
+  ports:
+    - protocol: TCP
+      port: 80 # The port to host on (target is the same as this port if not specified)
